@@ -1,6 +1,6 @@
 # react-offscreen
 
-keep-alive like for react
+keep-alive的react版本，它基于Suspense实现，通过它我们可以实现在切换组件时不销毁组件，以达到状态保持的目的。
 
 ## 使用方法
 
