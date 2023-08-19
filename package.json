@@ -1,12 +1,21 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
+  "keywords": [
+    "react", 
+    "offscreen", 
+    "react-offscreen", 
+    "keep-alive"
+  ],
+  "homepage": "https://github.com/IVLIU/react-offscreen",
+  "repository": {
+    "url": "https://github.com/IVLIU/react-offscreen"
+  },
   "engines": {
     "node": ">=10"
   },
@@ -33,8 +42,8 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "react-offscreen",
-  "author": "liuchuan",
+  "name": "@ivliu/react-offscreen",
+  "author": "ivliu",
   "module": "dist/react-offscreen.esm.js",
   "size-limit": [
     {
