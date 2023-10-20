@@ -1,10 +1,8 @@
 import React, { useRef, useEffect } from 'react';
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
+import type { IProps } from './type';
 
-export const Repeater: FC<{
-  mode: 'visible' | 'hidden';
-  children: ReactNode;
-}> = (props) => {
+export const Repeater: FC<IProps> = (props) => {
   // props
   const { mode, children } = props;
   // refs
