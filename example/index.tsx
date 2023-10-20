@@ -11,12 +11,16 @@ const Count = () => {
 
 const App = () => {
   const [visible, setVisible] = React.useState(false);
+  const [destroy, setDestroy] = React.useState(false);
   return (
     <div>
-      <button onClick={() => setVisible(!visible)}>{visible}</button>
-      <Offscreen mode={visible ? 'visible' : 'hidden'}>
-        <Count />
-      </Offscreen>
+      <button onClick={() => setVisible(!visible)}>{visible ? 'hidden' : 'show'}</button>
+      <button onClick={() => setDestroy(true)}>destroy</button>
+      {!destroy && (
+        <Offscreen mode={visible ? 'visible' : 'hidden'}>
+          <Count />
+        </Offscreen>
+      )}
     </div>
   );
 };
