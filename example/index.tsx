@@ -16,7 +16,7 @@ const App = () => {
   const [destroy, setDestroy] = React.useState(false);
   return (
     <div>
-      <button onClick={() => React.startTransition(() => setVisible(!visible))}>{visible ? 'hidden' : 'show'}</button>
+      <button onClick={() => setVisible(!visible)}>{visible ? 'hidden' : 'show'}</button>
       <button onClick={() => setDestroy(true)}>destroy</button>
       {!destroy && (
         <Offscreen mode={visible ? 'visible' : 'hidden'}>
