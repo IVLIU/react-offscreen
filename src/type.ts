@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
-export type OffscreenMode = 'visible' | 'hidden';
+export type ActivityMode = 'visible' | 'hidden';
 
 export interface IProps {
-  mode: OffscreenMode;
+  mode: ActivityMode;
   children: ReactNode;
 }

@@ -1,3 +1,5 @@
-export { Offscreen } from './OffScreen';
+export { Activity } from './Activity';
+export { Activity as Offscreen } from './Activity';
 
-export type { OffscreenMode } from './type';
+export type { ActivityMode } from './type';
+export type { ActivityMode as OffscreenMode } from './type';
