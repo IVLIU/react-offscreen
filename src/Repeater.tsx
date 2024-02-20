@@ -18,7 +18,14 @@ export const Repeater: FC<IProps> = (props) => {
   useEffect(() => () => resolvePromise(true), []);
 
   if (mode === 'hidden' && typeof resolveRef.current === 'undefined') {
-    throw new Promise<void>((resolve) => (resolveRef.current = resolve));
+    const promise = new Promise<void>((resolve) => (resolveRef.current = resolve));
+    // @ts-ignore
+    if(typeof React.use === 'function') {
+      // @ts-ignore
+      React.use(promise);
+    } else {
+      throw promise;
+    }
   }
 
   // warning
