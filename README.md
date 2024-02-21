@@ -88,6 +88,9 @@ const App = () => {
 ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
 ```
 
+## Activity
+由于react官方已经将Offscreen重名民为Activity，为了与官方保持一致，我们同时导出了Offscreen和Activity。
+
 ## unstable hooks
 我们实验性的支持了激活 失活的hooks，但是它的执行时机是晚于Effect的，这与react未来规划不符，所以我们不准备将其合并至主分支，有兴趣的可以自行fork使用。
 具体可以参考https://github.com/IVLIU/react-offscreen/tree/feat/unstable-hooks
