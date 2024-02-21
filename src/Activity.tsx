@@ -11,7 +11,7 @@ export const Activity: FC<IProps> = (props) => {
 
   if(NativeActivity) {
     return (
-      <Activity mode={mode}>{children}</Activity>
+      <NativeActivity mode={mode}>{children}</NativeActivity>
     )
   }
 
