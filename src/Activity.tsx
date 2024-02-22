@@ -8,7 +8,7 @@ const NativeActivity = ('Activity' in React ? React.Activity : 'unstable_Activit
 export const Activity: FC<IProps> = (props) => {
   const { mode, children } = props;
 
-  if(NativeActivity) {
+  if (NativeActivity) {
     return (
       <NativeActivity mode={mode}>{children}</NativeActivity>
     )
