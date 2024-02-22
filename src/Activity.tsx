@@ -3,8 +3,7 @@ import { Repeater } from './Repeater';
 import type { FC, ExoticComponent } from 'react';
 import type { IProps } from './type';
 
-// @ts-ignore
-const NativeActivity = (React.Activity || React.unstable_Activity) as ExoticComponent<IProps> | undefined;
+const NativeActivity = ('Activity' in React ? React.Activity : 'unstable_Activity' in React ? React.unstable_Activity : null) as ExoticComponent<IProps> | null;
 
 export const Activity: FC<IProps> = (props) => {
   const { mode, children } = props;

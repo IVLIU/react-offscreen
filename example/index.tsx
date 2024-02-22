@@ -3,8 +3,6 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Offscreen } from '../.';
 
-console.log(React.version)
-
 const Count = () => {
   const [count, setCount] = React.useState(0);
 
