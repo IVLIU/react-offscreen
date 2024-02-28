@@ -5,11 +5,13 @@ import type { IProps } from "./type";
 
 const NativeActivity = (
   "Activity" in React
-    ? React.Activity
+    // @ts-ignore
+    ? React.Activity as ExoticComponent<IProps>
     : "unstable_Activity" in React
-      ? React.unstable_Activity
+      // @ts-ignore
+      ? React.unstable_Activity as ExoticComponent<IProps>
       : null
-) as ExoticComponent<IProps> | null;
+);
 
 export const Activity: FC<IProps> = (props) => {
   const { mode, children } = props;

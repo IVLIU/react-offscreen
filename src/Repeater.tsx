@@ -30,8 +30,9 @@ export const Repeater: FC<IProps> = (props) => {
     }
 
     const promise = promiseRef.current!;
-
+    // @ts-ignore
     if ("use" in React && typeof React.use === "function") {
+      // @ts-ignore
       (React.use as <T>(primise: Promise<T>) => T)(promise);
     } else {
       throw promise;
