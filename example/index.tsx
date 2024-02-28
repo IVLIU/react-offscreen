@@ -1,7 +1,7 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Offscreen } from '../.';
+import { Activity } from '../.';
 
 const Count = () => {
   const [count, setCount] = React.useState(0);
@@ -17,9 +17,9 @@ const App = () => {
       <button onClick={() => setVisible(!visible)}>{visible ? 'hidden' : 'show'}</button>
       <button onClick={() => setDestroy(true)}>destroy</button>
       {!destroy && (
-        <Offscreen mode={visible ? 'visible' : 'hidden'}>
+        <Activity mode={visible ? 'visible' : 'hidden'}>
           <Count />
-        </Offscreen>
+        </Activity>
       )}
     </div>
   );

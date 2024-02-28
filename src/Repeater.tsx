@@ -6,7 +6,8 @@ export const Repeater: FC<IProps> = (props) => {
   // props
   const { mode, children } = props;
   // refs
-  const resolveRef = useRef<() => void>();
+  const promiseRef = useRef<Promise<void> | null>(null);
+  const resolveRef = useRef<(() => void) | null>(null);
   // methods
   const resolvePromise = (ignoreMode?: boolean) => {
     if (
@@ -14,16 +15,22 @@ export const Repeater: FC<IProps> = (props) => {
       typeof resolveRef.current === "function"
     ) {
       resolveRef.current();
-      resolveRef.current = void 0;
+      resolveRef.current = null;
+      promiseRef.current = null;
     }
   };
   // effect
   useEffect(() => () => resolvePromise(true), []);
 
-  if (mode === "hidden" && typeof resolveRef.current === "undefined") {
-    const promise = new Promise<void>(
-      (resolve) => (resolveRef.current = resolve),
-    );
+  if (mode === "hidden") {
+    if(resolveRef.current === null) {
+      promiseRef.current = new Promise<void>(
+        (resolve) => (resolveRef.current = resolve),
+      );
+    }
+
+    const promise = promiseRef.current!;
+
     if ("use" in React && typeof React.use === "function") {
       (React.use as <T>(primise: Promise<T>) => T)(promise);
     } else {
