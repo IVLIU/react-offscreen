@@ -4,5 +4,5 @@ export type ActivityMode = 'visible' | 'hidden';
 
 export interface IProps {
   mode: ActivityMode;
-  children: ReactNode;
+  children: ReactNode | ((mode: ActivityMode) => ReactNode);
 }
