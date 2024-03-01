@@ -55,7 +55,7 @@ const App = () => {
     <div>
       <button onClick={() => setVisible(!open)}>{open}</button>
       <Activity mode={open ? 'visible' : 'hidden'}>
-        {/** Suspense应该在Activity(Suspense)组件下 */}
+        {/** Suspense应该在Activity(Offscreen)组件下 */}
         <Suspense fallback="loading...">
           <LazyCount />
         </Suspense>
