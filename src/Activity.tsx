@@ -13,7 +13,22 @@ const NativeActivity = (
       : null
 );
 
+/**
+ * 
+ * @param props IProps
+ * @description This is a component that keeps its state while hiding it
+ * @example 
+ * when visible
+ * <Activity mode="visible">
+ *  <Child />
+ * </Activity>
+ * when hidden
+ * <Activity mode="hidden">
+ *  <Child />
+ * </Activity>
+ */
 export const Activity: FC<IProps> = (props) => {
+  // props
   const { mode, children } = props;
 
   if (NativeActivity) {

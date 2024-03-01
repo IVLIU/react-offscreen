@@ -40,6 +40,7 @@ export const Repeater: FC<IProps> = (props) => {
   }
 
   // warning
+  // ? throw a new promise is pending
   if (mode === "hidden") {
     console.error(
       navigator.language === "zh-CN"
