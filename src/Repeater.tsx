@@ -49,7 +49,7 @@ export const Repeater: FC<IProps> = (props) => {
       `
         : `
       Due to the limitations of react, component suspension caused by updates triggered by startTransition or useDeferredValue will not render the rollback. For details, please refer to
-      https://zh-hans.react.dev/reference/react/Suspense#preventing-already-revealed-content-from-hiding
+      https://react.dev/reference/react/Suspense#preventing-already-revealed-content-from-hiding
       `,
     );
   }
