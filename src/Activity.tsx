@@ -3,8 +3,10 @@ import { Repeater } from "./Repeater";
 import type { FC, ExoticComponent } from "react";
 import type { IProps } from "./type";
 
+const isSupportStableActivity = "Activity" in React;
+
 const NativeActivity = (
-  "Activity" in React
+  isSupportStableActivity
     // @ts-ignore
     ? React.Activity as ExoticComponent<IProps>
     : "unstable_Activity" in React
@@ -12,6 +14,15 @@ const NativeActivity = (
       ? React.unstable_Activity as ExoticComponent<IProps>
       : null
 );
+
+
+if(isSupportStableActivity) {
+  console.warn(
+    navigator.language === "zh-CN"
+      ? '检测到您使用的react已经原生支持了Activity，我们 建议您迁移至原生Activity。'
+      : 'It is detected that the react you are using already supports Activity natively. We recommend that you migrate to native Activity.'
+  )
+}
 
 /**
  * 
