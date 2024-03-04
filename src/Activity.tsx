@@ -1,9 +1,11 @@
 import React, { Suspense } from "react";
 import { Repeater } from "./Repeater";
+import { canUseDOM } from './canUseDOM';
 import type { FC, ExoticComponent } from "react";
 import type { IProps } from "./type";
 
 const isSupportStableActivity = "Activity" in React;
+const isBrowser = canUseDOM();
 
 const NativeActivity = (
   isSupportStableActivity
@@ -16,7 +18,7 @@ const NativeActivity = (
 );
 
 
-if(isSupportStableActivity) {
+if(isBrowser && isSupportStableActivity) {
   console.warn(
     navigator.language === "zh-CN"
       ? '检测到您使用的react已经原生支持了Activity，我们 建议您迁移至原生Activity。'

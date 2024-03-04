@@ -1,6 +1,9 @@
 import React, { useRef, useEffect } from "react";
+import { canUseDOM } from "./canUseDOM";
 import type { FC } from "react";
 import type { IProps } from "./type";
+
+const isBrowser = canUseDOM();
 
 export const Repeater: FC<IProps> = (props) => {
   // props
@@ -41,7 +44,7 @@ export const Repeater: FC<IProps> = (props) => {
 
   // warning
   // ? throw a new promise is pending
-  if (mode === "hidden") {
+  if (isBrowser && mode === "hidden") {
     console.error(
       navigator.language === "zh-CN"
         ? `
