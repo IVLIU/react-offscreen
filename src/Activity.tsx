@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Repeater } from "./Repeater";
-import { canUseDOM } from './canUseDOM';
+import { canUseDOM } from "./canUseDOM";
 import type { FC, ExoticComponent } from "react";
 import type { IProps } from "./type";
 
