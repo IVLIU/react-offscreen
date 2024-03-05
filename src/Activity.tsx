@@ -28,7 +28,7 @@ if(isBrowser && isSupportStableActivity) {
 
 /**
  * 
- * @param props IProps
+ * @param {IProps} props
  * @description This is a component that keeps its state while hiding it
  * @example 
  * when visible
