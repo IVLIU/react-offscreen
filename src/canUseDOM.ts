@@ -1,3 +1,6 @@
+/**
+ * @description determine whether it is a browser environment
+ */
 export const canUseDOM = () =>
   !!(
     typeof window !== 'undefined' &&
