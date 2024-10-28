@@ -54,3 +54,9 @@ export const Activity: FC<IProps> = (props) => {
     </Suspense>
   );
 };
+
+/**
+ * @deprecated
+ * @description please rename Offscreen to Activity
+ */
+export const Offscreen = Activity;
