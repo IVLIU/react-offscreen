@@ -45,6 +45,8 @@
     "react-dom": ">=17"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@rsbuild/plugin-react": "^1.0.5",
     "@rslib/core": "^0.0.15",
     "@size-limit/preset-small-lib": "^8.2.4",
