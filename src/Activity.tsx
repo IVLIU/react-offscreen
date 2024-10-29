@@ -59,4 +59,4 @@ export const Activity: FC<IProps> = (props) => {
  * @deprecated
  * @description please rename Offscreen to Activity
  */
-export const Offscreen = Activity;
+export const Offscreen: FC<IProps> = Activity;
