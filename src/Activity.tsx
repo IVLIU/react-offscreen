@@ -21,8 +21,8 @@ const NativeActivity = (
 if(isBrowser && isSupportStableActivity) {
   console.warn(
     navigator.language === "zh-CN"
-      ? '检测到您使用的react已经原生支持了Activity，我们 建议您迁移至原生Activity。'
-      : 'It is detected that the react you are using already supports Activity natively. We recommend that you migrate to native Activity.'
+      ? '检测到您使用的react版本已经原生支持了Activity，我们 建议您迁移至原生Activity。'
+      : 'It is detected that the react version you are using already supports Activity natively. We recommend that you migrate to native Activity.'
   )
 }
 
