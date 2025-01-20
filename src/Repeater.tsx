@@ -40,5 +40,5 @@ export const Repeater: FC<IProps> = (props) => {
 
   resolvePromise();
 
-  return typeof children === "function" ? children(mode) : children;
+  return children;
 };
