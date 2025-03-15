@@ -1,29 +1,23 @@
-import { pluginReact } from '@rsbuild/plugin-react';
-import { defineConfig } from '@rslib/core';
-
-const shared = {
-  dts: {
-    bundle: false,
-  },
-};
+import { pluginReact } from "@rsbuild/plugin-react";
+import { defineConfig } from "@rslib/core";
 
 export default defineConfig({
   lib: [
     {
-      ...shared,
-      format: 'esm',
+      format: "esm",
+      bundle: false,
       output: {
         distPath: {
-          root: './dist/esm',
+          root: "./dist/esm",
         },
       },
     },
     {
-      ...shared,
-      format: 'cjs',
+      format: "cjs",
+      bundle: false,
       output: {
         distPath: {
-          root: './dist/cjs',
+          root: "./dist/cjs",
         },
       },
     },
@@ -31,7 +25,7 @@ export default defineConfig({
   plugins: [
     pluginReact({
       swcReactOptions: {
-        runtime: 'automatic',
+        runtime: "automatic",
       },
     }),
   ],
