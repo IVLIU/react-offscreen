@@ -6,6 +6,7 @@ export default defineConfig({
     {
       format: "esm",
       bundle: false,
+      dts: true,
       output: {
         distPath: {
           root: "./dist/esm",
@@ -15,6 +16,7 @@ export default defineConfig({
     {
       format: "cjs",
       bundle: false,
+      dts: true,
       output: {
         distPath: {
           root: "./dist/cjs",
