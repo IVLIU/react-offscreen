@@ -10,9 +10,9 @@ export const Repeater: FC<IProps> = (props) => {
   const promiseRef = useRef<Promise<void> | null>(null);
   const resolveRef = useRef<(() => void) | null>(null);
   // methods
-  const resolvePromise = (ignoreMode?: boolean) => {
+  const resolvePromise = (ignore?: boolean) => {
     if (
-      (ignoreMode || mode === "visible") &&
+      (ignore || mode === "visible") &&
       typeof resolveRef.current === "function"
     ) {
       resolveRef.current();
