@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
+import { createPromise } from "./createPromise";
 import type { FC } from "react";
 import type { IProps } from "./type";
 
@@ -10,9 +11,9 @@ export const Repeater: FC<IProps> = (props) => {
   const promiseRef = useRef<Promise<void> | null>(null);
   const resolveRef = useRef<(() => void) | null>(null);
   // methods
-  const resolvePromise = (ignore?: boolean) => {
+  const resolvePromise = (force: boolean = false) => {
     if (
-      (ignore || mode === "visible") &&
+      (force || mode === "visible") &&
       typeof resolveRef.current === "function"
     ) {
       resolveRef.current();
@@ -25,9 +26,10 @@ export const Repeater: FC<IProps> = (props) => {
 
   if (mode === "hidden") {
     if (resolveRef.current === null) {
-      promiseRef.current = new Promise<void>(
-        (resolve) => (resolveRef.current = resolve),
-      );
+      const { promise, resolve } = createPromise<void>();
+
+      promiseRef.current = promise;
+      resolveRef.current = resolve;
     }
 
     const promise = promiseRef.current!;

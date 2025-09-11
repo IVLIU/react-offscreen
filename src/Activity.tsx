@@ -37,9 +37,9 @@ if (isBrowser && isSupportStableActivity) {
  *  <Child />
  * </Activity>
  */
-export const Activity: FC<IProps> = (props) => {
+export const Activity: FC<Partial<IProps>> = (props) => {
   // props
-  const { mode, children } = props;
+  const { mode = "visible", children } = props;
 
   if (NativeActivity) {
     return <NativeActivity mode={mode}>{children}</NativeActivity>;
