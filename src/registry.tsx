@@ -1,4 +1,3 @@
-import React from "react";
 import { Activity, Offscreen } from "./Activity";
 import type { ReactNode } from "react";
 import type { UIElement, VisibilityCondition } from "@json-render/core";
